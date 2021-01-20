@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import React from "react";
+import Robots from "./robots/robots";
+import AddRobot from "./robots/addRobot";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+let data = {
+  name: "test",
+  email: "123",
+  website: "test web",
+  imageUrl: "http://placehold.it/500",
+  id: 0,
+};
+
+class App extends React.Component {
+  render() {
+    return (
+      <div className="App">
+        <h1>Robots Redux</h1>
+        <Robots />
+        <AddRobot robot={data} />
+      </div>
+    );
+  }
 }
 
 export default App;
